@@ -42,6 +42,27 @@ Either you can provide an absolute path such as `/path/to/image.png` or a relati
 
 You can provide an array of paths `["/path/to/image.png", "/path/to/second_image.png"]` and then it will randomly select one of them at the start.
 
+** How do I change the opacity or the backgroundColor for an image?**
+
+To change the opacity or background color for an image you should pass an object instead of a string for the array:
+
+Note: The default value for the color is black
+
+```
+backgroundImage: [
+"/path/to/image.png", 
+{
+	"url": "/path/to/image_with_opacity.png",
+	"opacity": 0.5
+},
+{
+	"url": "/path/to/image_with_opacity2.png",
+	"opacity": 0.5,
+	"backgroundColor": "pink"
+}
+]
+```
+
 **Does this support Hyper 2?**
 
 Yep, this plugin supports Hyper 2.x.
