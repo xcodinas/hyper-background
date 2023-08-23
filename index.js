@@ -11,11 +11,13 @@ exports.decorateConfig = config => {
      backgroundImage = config.backgroundImage[
          Math.floor(Math.random() * config.backgroundImage.length)]; 
   }
+ 
   const backgroundPath = path.isAbsolute(backgroundImage)
     // If it is absolute, then set it to the value, else resolve it correctly.
-    ? config.backgroundImage
-    : path.resolve(os.homedir(), config.backgroundImage)
+    ? backgroundImage
+    : path.resolve(os.homedir(), backgroundImage)
   // Assign the old config and our customizations to a new object and return it.
+
   return Object.assign(config, {
     // This makes the terminal transparent.
     backgroundColor: 'transparent',
@@ -25,7 +27,9 @@ exports.decorateConfig = config => {
       .hyper_main {
         background: url(file://${backgroundPath}) center;
         background-size: cover;
+
       }
+
       .terms_terms {
         background-color: transparent;
       }
