@@ -40,6 +40,8 @@ hpm install hyper-background
 
 Either you can provide an absolute path such as `/path/to/image.png` or a relative path from your home directory which hyper-background will resolve automatically.
 
+You can provide an array of paths `["/path/to/image.png", "/path/to/second_image.png"]` and then it will randomly select one of them at the start.
+
 **Does this support Hyper 2?**
 
 Yep, this plugin supports Hyper 2.x.
@@ -130,6 +132,9 @@ module.exports = {
 
     // Here lies our background image.
     backgroundImage: "/path/to/your/image"
+
+    // If you want to add more than one image you need to do it this way.
+    backgroundImage: ["/path/to/your/image.png", "/path/to/your/second_image.png"]
   },
   plugins: [
     "hyper-background"
