@@ -131,10 +131,10 @@ module.exports = {
     copyOnSelect: false,
 
     // Here lies our background image.
-    backgroundImage: "/path/to/your/image"
+    backgroundImage: "/path/to/your/image",
 
     // If you want to add more than one image you need to do it this way.
-    backgroundImage: ["/path/to/your/image.png", "/path/to/your/second_image.png"]
+    backgroundImage: ["/path/to/your/image.png", "/path/to/your/second_image.png"],
   },
   plugins: [
     "hyper-background"
