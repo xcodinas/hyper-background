@@ -6,7 +6,12 @@ const os = require('os')
 exports.decorateConfig = config => {
   if (!config.backgroundImage) return
   // Check if the background path is absolute.
-  const backgroundPath = path.isAbsolute(config.backgroundImage)
+  const backgroundImage = config.backgroundImage;
+  if (Array.isArray(config.backgroundImage)) {
+     backgroundImage = config.backgroundImage[
+         Math.floor(Math.random() * config.backgroundImage.length)]; 
+  }
+  const backgroundPath = path.isAbsolute(backgroundImage)
     // If it is absolute, then set it to the value, else resolve it correctly.
     ? config.backgroundImage
     : path.resolve(os.homedir(), config.backgroundImage)
